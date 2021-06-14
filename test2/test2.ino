@@ -39,7 +39,6 @@ void setup() {
 // l'onde sur ce dernier)
 //
 void loop() {
-    Serial.print("[2J");    // clear screen command
     // put your main code here, to run repeatedly:
     digitalWrite(12, HIGH);
     digitalWrite(10, LOW);
