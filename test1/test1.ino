@@ -11,6 +11,11 @@ int minimumRange = 10;   // distance Minimale acceptée (en cm)
 long duration, distance; // Durée utilisé pour calculer la distance
 Servo monServo;
 
+int photocellPin = 3; // the cell and 10K pulldown are connected to a0
+int photocellReading; // the analog reading from the analog resistor divider
+
+
+
 // Motor A connections
 int enA = A5;
 int in1 = 12;
@@ -161,7 +166,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   // servoControl();JB
   //watch = looker();
-  if (looker() == false) {
+  /*if (looker() == false) {
     digitalWrite(LEDPin, HIGH);
     digitalWrite(greenLEDPin, LOW);
     directionControl();
@@ -171,7 +176,11 @@ void loop() {
     digitalWrite(LEDPin, LOW);
     digitalWrite(greenLEDPin, HIGH);
     speedControl();
-  }
+  }*/
+
+  photocellReading = analogRead(photocellPin);
+  Serial.print("Analog reading = ");
+  Serial.println(photocellReading); // the raw analog reading
 
 
 
